@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio personal de Ema Mariel Guevara Lorenzo: formación, certificaciones, proyectos, habilidades y CV.">
+  <link rel="icon" href="assets/emalogo.png">
+  <title>Ema Guevara | Marca personal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#151515; --gold:#9a7800; --gold2:#c4a33a; --cream:#f8f5ee;
+      --paper:#fffdf9; --muted:#6c6a65; --line:#e8e1d4; --white:#fff;
+      --shadow:0 18px 50px rgba(30,25,15,.09);
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:"DM Sans",sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(255,253,249,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(232,225,212,.8)}
+    .nav-inner{max-width:1180px;margin:auto;height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 22px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.08em}
+    .brand img{width:46px;height:46px;object-fit:contain}
+    .brand span{font-size:15px}
+    .links{display:flex;gap:24px;font-size:13px;font-weight:600}
+    .links a{color:#4b4944}.links a:hover{color:var(--gold)}
+    .menu{display:none;border:0;background:none;font-size:25px}
+    section{padding:100px 22px}
+    .wrap{max-width:1180px;margin:auto}
+    .hero{min-height:100vh;padding-top:145px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px;background:
+      radial-gradient(circle at 85% 20%,rgba(196,163,58,.13),transparent 28%),
+      linear-gradient(180deg,#fffdf9,#f8f5ee)}
+    .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+    h1,h2{font-family:"Playfair Display",serif;line-height:1.08;margin:12px 0}
+    h1{font-size:clamp(48px,7vw,82px);max-width:720px}
+    h2{font-size:clamp(34px,4vw,52px)}
+    .hero p{max-width:650px;font-size:18px;color:var(--muted)}
+    .accent{color:var(--gold)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;border:1px solid var(--ink);font-weight:700;font-size:14px}
+    .btn.primary{background:var(--ink);color:white}.btn.primary:hover{background:var(--gold);border-color:var(--gold)}
+    .btn.light{background:white}
+    .hero-card{position:relative;display:flex;justify-content:center}
+    .hero-card:before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:rgba(196,163,58,.14);top:10%;left:50%;transform:translateX(-50%)}
+    .hero-logo{position:relative;width:min(440px,90%);filter:drop-shadow(0 20px 25px rgba(0,0,0,.1))}
+    .hero-photo{position:relative;width:min(420px,90%);aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:28px;box-shadow:0 22px 45px rgba(30,25,15,.16);border:8px solid white}
+    .section-head{max-width:760px;margin-bottom:42px}
+    .section-head p{color:var(--muted);max-width:680px}
+    .about{background:white}
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px}
+    .quote{font-family:"Playfair Display",serif;font-size:31px;line-height:1.3;border-left:3px solid var(--gold);padding-left:22px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+    .chip{padding:8px 13px;background:var(--cream);border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600}
+    .timeline{display:grid;gap:15px}
+    .edu-card,.cert-card,.vol-card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 8px 25px rgba(0,0,0,.03)}
+    .education-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .education-photo{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+    .education-photo img{display:block;width:100%;height:210px;object-fit:cover}
+    .education-photo figcaption{padding:14px 16px;font-size:13px;color:var(--muted);font-weight:600}
+    .edu-card strong,.cert-card strong{display:block;font-size:18px;margin:4px 0}
+    .tag{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:700}
+    .certs{background:var(--cream)}
+    .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .cert-card{background:white}
+    .cert-card .icon{font-size:28px}
+    /* Imágenes de las certificaciones */
+.cert-card .icon {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #f8f5ee;
+}
+
+.cert-card .icon img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+}
+    .cert-card a{display:inline-block;margin-top:12px;color:var(--gold);font-weight:700;font-size:13px}
+    .projects{background:#151515;color:white}
+    .projects .section-head p{color:#c9c6bf}
+    .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .project{background:#202020;border:1px solid #363636;border-radius:24px;overflow:hidden;transition:.25s}
+    .project:hover{transform:translateY(-6px);border-color:#7d6a24}
+    .project-img{height:245px;background:#111;display:flex;align-items:center;justify-content:center;padding:15px}
+    .project-img img{width:100%;height:100%;object-fit:contain;border-radius:12px}
+    .project-body{padding:24px}
+    .project-body h3{font-family:"Playfair Display",serif;font-size:28px;margin:0 0 8px}
+    .project-body p{color:#c9c6bf;font-size:14px}
+    .project-meta{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+    .project-meta span{font-size:11px;border:1px solid #494949;border-radius:999px;padding:5px 9px;color:#ddd}
+    .skills{background:white}
+    .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skill{padding:24px;border:1px solid var(--line);border-radius:18px;background:#fff}
+    .skill h3{margin:10px 0 5px}
+    .skill p{color:var(--muted);font-size:14px}
+    .vol{background:var(--cream)}
+    .vol-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+    .vol-card{background:white}
+    .goals{background:white}
+    .goal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .goal{padding:24px;border-radius:20px;background:var(--cream);border:1px solid var(--line)}
+    .goal h3{font-family:"Playfair Display",serif;font-size:25px;margin:0 0 10px}
+    .goal ul{padding-left:18px;color:var(--muted)}
+    .cv{background:linear-gradient(135deg,#151515,#27231a);color:white;text-align:center}
+    .cv p{max-width:650px;margin:12px auto;color:#d7d3ca}
+    .contact-grid{max-width:900px;margin:30px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .contact-card{display:flex;align-items:center;gap:14px;text-align:left;padding:18px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(255,255,255,.06);transition:.2s}
+    .contact-card:hover{transform:translateY(-3px);background:rgba(255,255,255,.1);border-color:rgba(196,163,58,.65)}
+    .contact-card>span{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#c4a33a;color:#151515;font-size:20px;font-weight:800;flex:none}
+    .contact-card small{display:block;color:#aaa69d;font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+    .contact-card strong{display:block;color:#fff;font-size:13px;overflow-wrap:anywhere}
+    footer{padding:30px 22px;text-align:center;color:#777;font-size:13px;background:#f5f1e9}
+    .links.mobile{display:flex;position:absolute;top:78px;left:0;right:0;background:rgba(255,253,249,.98);padding:18px 22px;flex-direction:column;gap:14px;border-bottom:1px solid var(--line)}
+    @media(max-width:850px){
+      .links{display:none}.menu{display:block}.hero,.about-grid,.vol-grid{grid-template-columns:1fr}
+      .hero{padding-top:120px}.hero-card{order:-1}.hero-logo{width:280px}.hero-photo{width:280px}
+      .project-grid,.skill-grid,.goal-grid,.cert-grid,.contact-grid,.education-photos{grid-template-columns:1fr}
+      section{padding:78px 18px}
+    }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#inicio"><img src="assets/emalogo.png" alt="Logo de Ema Guevara"><span>EMA GUEVARA</span></a>
+    <div class="links">
+      <a href="#sobre-mi">Sobre mí</a><a href="#formacion">Formación</a><a href="#certificaciones">Certificaciones</a>
+      <a href="#proyectos">Proyectos</a><a href="#habilidades">Habilidades</a><a href="#metas">Metas</a><a href="#contacto">Contacto</a>
+    </div>
+    <button class="menu" aria-label="Abrir menú" onclick="document.querySelector('.links').classList.toggle('mobile')">☰</button>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap" style="display:contents">
+    <div>
+      <div class="eyebrow">Marca personal · Portafolio</div>
+      <h1>Hola, soy <span class="accent">Ema</span>.</h1>
+      <p>Soy <strong>Ema Mariel Guevara Lorenzo</strong>, estudiante de último año de bachillerato, creativa, responsable y comprometida con seguir aprendiendo para aportar de manera positiva a la sociedad.</p>
+      <div class="cta">
+        <a class="btn primary" href="#proyectos">Ver mis proyectos</a>
+        <a class="btn light" href="#sobre-mi">Conocerme</a>
+      </div>
+    </div>
+    <div class="hero-card"><img class="hero-photo" src="assets/logo-ema.jpeg" alt="Foto de Ema Guevara"></div>
+  </div>
+</section>
+
+<section class="about" id="sobre-mi">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">01 · Sobre mí</div><h2>Crecer para ayudar y aprender para transformar.</h2></div>
+    <div class="about-grid">
+      <div class="quote">“Me gusta ayudar a los demás y convertir lo que aprendo en oportunidades para seguir creciendo.”</div>
+      <div>
+        <p>Me considero una persona <strong>responsable, paciente, colaborativa y creativa</strong>. Me gusta trabajar con otras personas, aportar ideas y buscar soluciones cuando se presentan nuevos retos.</p>
+        <p>Una característica que me representa es la <strong>resiliencia</strong>: procuro aprender de las dificultades y continuar esforzándome para alcanzar mis objetivos.</p>
+        <p>Mi propósito es seguir desarrollándome académica y profesionalmente, y utilizar mis conocimientos para contribuir de alguna manera al bienestar de otras personas y de la sociedad.</p>
+        <div class="chips">
+          <span class="chip">Responsabilidad</span><span class="chip">Creatividad</span><span class="chip">Resiliencia</span>
+          <span class="chip">Trabajo en equipo</span><span class="chip">Paciencia</span><span class="chip">Colaboración</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formacion">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">02 · Formación</div><h2>Mi trayectoria académica</h2><p>Una formación construida paso a paso, con experiencias que han fortalecido mis conocimientos y habilidades.</p></div>
+    <div class="timeline">
+      <div class="edu-card"><span class="tag">2025–2026</span><strong>Último año de Bachillerato</strong><span>Instituto Nacional “Joaquín Ernesto Cárdenas” (INJECAR)</span><p>Actualmente me encuentro en la etapa final de mi formación media, fortaleciendo mis competencias académicas, tecnológicas y de trabajo en equipo.</p></div>
+      <div class="edu-card"><span class="tag">2017–2024</span><strong>Complejo Educativo Confederación Suiza</strong><p>Esta fue una etapa muy importante en mi formación. Durante estos años me esforcé por dar lo mejor de mí, obteniendo el <strong>primer y segundo lugar</strong> en diferentes momentos de mi trayectoria académica. Estos logros fueron resultado de mi dedicación, responsabilidad y constancia, y me motivaron a seguir superándome.</p></div>
+      <div class="edu-card"><span class="tag">2013–2016</span><strong>Complejo Educativo Sor Cecilia Santillana Ahuactzin</strong><p>Fue una etapa muy bonita de mi vida, llena de aprendizajes, experiencias y momentos que contribuyeron a mi crecimiento. Allí comencé a construir muchas de las bases que me han acompañado durante mi trayectoria académica.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="certs" id="certificaciones">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">03 · Certificaciones</div><h2>Competencias digitales</h2><p>Certificaciones oficiales que respaldan mi preparación en Microsoft Excel.</p></div>
+    <div class="cert-grid">
+      <article class="cert-card"><div class="icon"><img src="assets/excel1.jpeg" alt="Logo de Ema Guevara"></div><span class="tag">Microsoft Office Specialist</span><strong>Excel Associate (Microsoft 365 Apps)</strong><p>Certificación que acredita conocimientos y competencias en el uso de Microsoft Excel para la gestión y organización de información.</p><a href="https://learn.microsoft.com/es-es/credentials/certifications/mos-excel-associate-m365-apps/" target="_blank" rel="noopener">Ver certificación oficial →</a></article>
+      <article class="cert-card"><div class="icon"><img src="assets/excel2.jpeg" alt="Logo de Ema Guevara"></div><span class="tag">Microsoft Office Specialist</span><strong>Excel Expert (Microsoft 365 Apps)</strong><p>Certificación que demuestra un dominio avanzado de Microsoft Excel y de sus herramientas para trabajar con información y datos.</p><a href="https://learn.microsoft.com/en-us/credentials/certifications/mos-excel-expert-m365-apps/" target="_blank" rel="noopener">Ver certificación oficial →</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="proyectos">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">04 · Portafolio</div><h2>Proyectos que he desarrollado</h2><p>Experiencias académicas y tecnológicas en las que he trabajado junto a otros estudiantes para plantear soluciones a necesidades reales.</p></div>
+    <div class="project-grid">
+      <article class="project">
+        <div class="project-img"><img src="assets/feed-routes.jpg" alt="Logo Feed&Routes"></div>
+        <div class="project-body"><h3>Feed&Routes</h3><span class="tag">Hackathon</span><p>Proyecto orientado a facilitar la conexión entre comunidades y personas que ofrecen productos, haciendo más sencillo encontrar opciones accesibles.</p><div class="project-meta"><span>Innovación</span><span>Trabajo en equipo</span><span>Tecnología</span></div></div>
+      </article>
+      <article class="project">
+        <div class="project-img"><img src="assets/edumotion.jpg" alt="Logo EduMotion"></div>
+        <div class="project-body"><h3>EduMotion</h3><span class="tag">Expo</span><p>Propuesta educativa que utilizaba lentes de realidad virtual para apoyar el aprendizaje de jóvenes en áreas como inglés, informática y valores.</p><div class="project-meta"><span>Realidad virtual</span><span>Educación</span><span>Creatividad</span></div></div>
+      </article>
+      <article class="project">
+        <div class="project-img"><img src="assets/bitex.jpg" alt="Logo BiteX"></div>
+        <div class="project-body"><h3>BiteX</h3><span class="tag">ExpoTech</span><p>Proyecto enfocado en reducir el desperdicio de alimentos mediante su aprovechamiento y redistribución para personas que pudieran necesitarlos.</p><div class="project-meta"><span>Impacto social</span><span>Sostenibilidad</span><span>Tecnología</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="habilidades">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">05 · Habilidades</div><h2>Lo que puedo aportar</h2></div>
+    <div class="skill-grid">
+      <div class="skill"><div class="eyebrow">01</div><h3>Diseño y creatividad</h3><p>Creo diseños y piezas publicitarias, buscando combinar comunicación visual, creatividad y una presentación clara.</p></div>
+      <div class="skill"><div class="eyebrow">02</div><h3>Trabajo colaborativo</h3><p>Me gusta participar en equipos, escuchar ideas, aportar propuestas y trabajar hacia un objetivo común.</p></div>
+      <div class="skill"><div class="eyebrow">03</div><h3>Tecnología</h3><p>He participado en proyectos tecnológicos y cuento con certificaciones de Microsoft Excel Associate y Expert.</p></div>
+      <div class="skill"><div class="eyebrow">04</div><h3>Comunicación</h3><p>He desarrollado experiencias de presentación de proyectos en Hackathon, Expo y ExpoTech.</p></div>
+      <div class="skill"><div class="eyebrow">05</div><h3>Resolución de problemas</h3><p>Me interesa identificar necesidades y convertirlas en propuestas que puedan ser útiles para otras personas.</p></div>
+      <div class="skill"><div class="eyebrow">06</div><h3>Compromiso social</h3><p>Me motiva utilizar mis capacidades para contribuir positivamente en mi entorno y en la sociedad.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="vol">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">06 · Voluntariado</div><h2>Participación y compromiso</h2></div>
+    <div class="vol-grid">
+      <div class="vol-card"><span class="tag">Actividad institucional</span><h3>Jornadas de limpieza</h3><p>He participado en jornadas de limpieza dentro del instituto, colaborando en el cuidado y mantenimiento de los espacios educativos.</p><p>Esta experiencia refleja mi disposición para trabajar en equipo y contribuir al bienestar del entorno en el que estudio.</p></div>
+      <div class="vol-card"><span class="tag">Propósito futuro</span><h3>Seguir aportando</h3><p>Quiero continuar participando en actividades que me permitan ayudar a otras personas y desarrollar un mayor compromiso con mi comunidad.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="goals" id="metas">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">07 · Proyección</div><h2>Mis metas</h2><p>Mi objetivo es construir un futuro profesional estable sin dejar de lado el crecimiento personal y el servicio a los demás.</p></div>
+    <div class="goal-grid">
+      <div class="goal"><h3>Corto plazo</h3><ul><li>Finalizar mi bachillerato.</li><li>Continuar fortaleciendo mis habilidades.</li><li>Seguir desarrollando proyectos.</li></ul></div>
+      <div class="goal"><h3>Mediano plazo</h3><ul><li>Ingresar a la universidad.</li><li>Estudiar una carrera profesional.</li><li>Obtener nuevas certificaciones y experiencias.</li></ul></div>
+      <div class="goal"><h3>Largo plazo</h3><ul><li>Graduarme de la universidad.</li><li>Conseguir un buen empleo.</li><li>Alcanzar estabilidad financiera y formar una familia.</li><li>Servir y aportar a la sociedad.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="cv" id="contacto">
+  <div class="wrap">
+    <div class="eyebrow">08 · Contacto y CV</div>
+    <h2>Conectemos</h2>
+    <p>Si deseas conocer más sobre mi perfil académico, mis proyectos o futuras oportunidades de colaboración, puedes contactarme.</p>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:emamguevara5@gmail.com"><span>✉</span><div><small>Correo electrónico</small><strong>emamguevara5@gmail.com</strong></div></a>
+      <a class="contact-card" href="tel:+50375898230"><span>⌕</span><div><small>Teléfono</small><strong>7589-8230</strong></div></a>
+      <a class="contact-card" href="assets/CV_Ema_Mariel_Guevara_Lorenzo.pdf" download><span>↓</span><div><small>Currículum Vitae</small><strong>Descargar CV en PDF</strong></div></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Ema Guevara</footer>
+</body>
+</html>
